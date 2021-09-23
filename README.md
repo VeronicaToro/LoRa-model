@@ -2,9 +2,21 @@ This repository is the implementation of the model presented in ["Modeling Commu
 
 Setting the environment
 =======================
+
+Conda
+-----
+
 You can easily set the environment using [Conda](https://docs.conda.io/en/latest/). Simply run
 ```
 conda env create --file environment.yml
+```
+
+pip
+---
+
+If you prefer to set the environment using pip, you can do so as follows:
+```
+pip install -r requirements.txt
 ```
 
 Usage
