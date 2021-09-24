@@ -19,7 +19,6 @@ If you prefer to set the environment using pip, you can do so as follows. This w
 ```
 pip install -r requirements.txt
 ```
-Please note that we tested this with Python version 3.8.11
 
 Usage
 =====
