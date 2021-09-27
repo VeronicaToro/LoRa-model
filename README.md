@@ -9,8 +9,9 @@ Conda
 You can easily set the environment using [Conda](https://docs.conda.io/en/latest/). Simply run
 ```
 conda config --append channels conda-forge
-conda env create --file environment.yml
+conda create --name lora-env --file requirements.txt
 ```
+to create a Conda environment called *lora-env*.
 
 pip
 ---
