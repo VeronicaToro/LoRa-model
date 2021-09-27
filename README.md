@@ -18,13 +18,13 @@ pip
 
 If you prefer to set the environment using [pip](https://pypi.org/project/pip/), you can do so as follows. This was last tested with Python version 3.7.4 and 3.8.11.
 
-First, create the pip virtual environment (here, the environment is called *.lora* and will be created in a folder with the same name):
+First, create the pip virtual environment (here, the environment is called *.lora-env* and will be created in a folder with the same name):
 ```
-python -m venv .lora
+python -m venv .lora-env
 ```
 Activate it
 ```
-source .lora/bin/activate
+source .lora-env/bin/activate
 ```
 And install the dependencies
 ```
