@@ -15,9 +15,23 @@ conda env create --file environment.yml
 pip
 ---
 
-If you prefer to set the environment using pip, you can do so as follows. This was last tested with Python version 3.8.11.
+If you prefer to set the environment using [pip](https://pypi.org/project/pip/), you can do so as follows. This was last tested with Python version 3.7.4 and 3.8.11.
+
+First, create the pip virtual environment (here, the environment is called *.lora* and will be created in a folder with the same name):
+```
+python -m venv .lora
+```
+Activate it
+```
+source .lora/bin/activate
+```
+And install the dependencies
 ```
 pip install -r requirements.txt
+```
+To deactivate the environment, simply run:
+```
+deactivate
 ```
 
 Usage
