@@ -53,7 +53,7 @@ You can also make *main.py* executable and avoid calling Python every time. For 
 ```
 python main.py --help
 ```
-There are two options that must always be specified:
+There are three options that must always be specified:
 * *-s*: Spreading Factor (SF) assignment strategy. It can be either *random* or *minimum*
 * *-t*: Transmission Power (TP) assignment strategy. It can be either *random*, *minimum* or *maximum*
 * *-d*: Directory where the config file is located. See below for more details on the config file
@@ -69,7 +69,7 @@ You can run the model in both, uniform scenarios or user-specified networks, as 
 Uniform scenarios
 -----------------
 
-In this setting, the nodes are uniformly distributed around the gateways. You need to specify the number of gateways and nodes, the radius of deployment for each gateway and their location. This parameter are set in the file *network_config_files/network_config.ini*. For instance, for a network with 2 gateways located at coordinates (500 m, 500 m), (1000 m, 500 m), 50 nodes deployed around each gateway in a radius of 500 m for both gateways, the file should look as follows:
+In this setting, the nodes are uniformly distributed around the gateways. You need to specify the number of gateways and nodes, the radius of deployment for each gateway and their location. These parameters are set in the file *network_config_files/network_config.ini*. For instance, for a network with 2 gateways located at coordinates (500 m, 500 m) and (1000 m, 500 m), 50 nodes deployed around each gateway in a radius of 500 m for both gateways, the file should look as follows:
 
 ```
 [network]
@@ -91,9 +91,9 @@ yLocation = 500
 radius = 500
 ```
 
-Note that the parameters *sizeX* and *sizeY* define the whole deployed area, such that all nodes are contained in a rectangle of *sizeX* x *sizeY*. Moreover, under [network], *numNodes* must be equal to the sum of *numNodes* for each gateway.
+Note that the parameters *sizeX* and *sizeY* define the whole deployed area, such that all nodes are contained in a rectangle of sizes *sizeX*  and *sizeY*. Moreover, under [network], *numNodes* must be equal to the sum of *numNodes* for each gateway.
 
-To run the algorithm with the network specifications in the file called *network_config_ini*, inside the folder *network_config_files/*:
+To run the algorithm with the network specifications in the file called *network_config.ini*, inside the folder *network_config_files/*:
 ```
 python main.py -s minimum -t maximum -d ../network_config_files/network_config.ini
 ```
@@ -114,7 +114,7 @@ Even though the *-s* and *-t* flags have no effect in this case, they must alway
 Saving your results
 ===================
 
-After running the algorithm, you will only get the *Overall delivery ratio per node* printed in the terminal. However, if you would like to store the delivery ratio per node in a numpy file, then you must specify the path and file name you want to create with the results, using the option *-df*. Remember to include the file extension *.npy*. If such a file already exists, the results will be overwritten.
+After running the algorithm, you will only get the *Overall delivery ratio per node* printed in the terminal. However, if you would like to store the delivery ratio per node in a [numpy](https://numpy.org/) file, then you must specify the path and file name you want to create with the results, using the option *-df*. Remember to include the file extension *.npy*. If such a file already exists, the results will be overwritten.
 ```
 python main.py -s minimum -t maximum -d ../network_config_files/network_config.ini -df results.npy 
 ```
