@@ -8,13 +8,14 @@ Conda
 
 You can easily set the environment using [Conda](https://docs.conda.io/en/latest/). Simply run
 ```
+conda config --append channels conda-forge
 conda env create --file environment.yml
 ```
 
 pip
 ---
 
-If you prefer to set the environment using pip, you can do so as follows:
+If you prefer to set the environment using pip, you can do so as follows. This was last tested with Python version 3.8.11.
 ```
 pip install -r requirements.txt
 ```
