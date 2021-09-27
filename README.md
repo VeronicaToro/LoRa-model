@@ -21,7 +21,15 @@ pip install -r requirements.txt
 
 Usage
 =====
-Run
+Clone the repository:
+```
+git clone https://github.com/VeronicaToro/LoRa-model.git
+```
+From the *src/* folder you can run the model. That is, first run
+```
+cd directory_where_LoRa-model_was_cloned/LoRa-model/src/
+```
+Then, run the model:
 ```
 python main.py [options]
 ```
@@ -46,7 +54,7 @@ You can run the model in both, uniform scenarios or user-specified networks, as 
 Uniform scenarios
 -----------------
 
-In this setting, the nodes are uniformly distributed around the gateways. You need to specify the number of gateways and nodes, the radius of deployment for each gateway and their location. This parameter are set in the file *network_config.ini*. For instance, for a network with 2 gateways located at coordinates (500 m, 500 m), (1000 m, 500 m), 50 nodes deployed around each gateway in a radius of 500 m for both gateways, the file should look as follows:
+In this setting, the nodes are uniformly distributed around the gateways. You need to specify the number of gateways and nodes, the radius of deployment for each gateway and their location. This parameter are set in the file *network_config_files/network_config.ini*. For instance, for a network with 2 gateways located at coordinates (500 m, 500 m), (1000 m, 500 m), 50 nodes deployed around each gateway in a radius of 500 m for both gateways, the file should look as follows:
 
 ```
 [network]
@@ -70,19 +78,19 @@ radius = 500
 
 Note that the parameters *sizeX* and *sizeY* define the whole deployed area, such that all nodes are contained in a rectangle of *sizeX* x *sizeY*. Moreover, under [network], *numNodes* must be equal to the sum of *numNodes* for each gateway.
 
-To run the algorithm with the network specifications in the file called *network_config_ini*:
+To run the algorithm with the network specifications in the file called *network_config_ini*, inside the folder *network_config_files/*:
 ```
-python main.py -s minimum -t maximum -d network_config.ini
+python main.py -s minimum -t maximum -d ../network_config_files/network_config.ini
 ```
 
 
 User-specified networks
 -----------------------
 
-For a custom network, you must specify the location of all the nodes in the same format used in the example file in *network_ini_files*. Moreover, if you would like to specify the SF and TP of all nodes, you can do so in the same format of the example file. Additionally, you must enable the *-sno* flag when running the algorithm, as follows:
+For a custom network, you must specify the location of all the nodes in the same format used in the example file in the *network_ini_files/* folder. Moreover, if you would like to specify the SF and TP of all nodes, you can do so in the same format of the example file. Additionally, you must enable the *-sno* flag when running the algorithm, as follows:
 
 ```
-python main.py -s minimum -t maximum -d custom_network.ini -sno 1
+python main.py -s minimum -t maximum -d ../network_config_files/custom_network.ini -sno 1
 ```
 
 Even though the *-s* and *-t* flags have no effect in this case, they must always be entered.
@@ -93,5 +101,5 @@ Saving your results
 
 After running the algorithm, you will only get the *Overall delivery ratio per node* printed in the terminal. However, if you would like to store the delivery ratio per node in a numpy file, then you must specify the path and file name you want to create with the results, using the option *-df*. Remember to include the file extension *.npy*. If such a file already exists, the results will be overwritten.
 ```
-python main.py -s minimum -t maximum -d network_config.ini -df results.npy 
+python main.py -s minimum -t maximum -d ../network_config_files/network_config.ini -df results.npy 
 ```
