@@ -2,6 +2,23 @@ This repository is the implementation of the model described in ["Modeling Commu
 
 Verónica Toro-Betancur, Gopika Premsankar, Mariusz Slabicki and Mario Di Francesco, "Modeling Communication Reliability in LoRa Networks with Device-level Accuracy," IEEE INFOCOM 2021 - IEEE Conference on Computer Communications, 2021, pp. 1-10, doi: 10.1109/INFOCOM42981.2021.9488783.
 
+<details>
+
+  <summary>Click here to get BibTeX</summary>
+  ```BibTeX
+    @INPROCEEDINGS{9488783,
+    author={Toro-Betancur, Verónica and Premsankar, Gopika and Slabicki, Mariusz and Di Francesco, Mario},
+    booktitle={IEEE INFOCOM 2021 - IEEE Conference on Computer Communications}, 
+    title={Modeling Communication Reliability in LoRa Networks with Device-level Accuracy}, 
+    year={2021},
+    volume={},
+    number={},
+    pages={1-10},
+    doi={10.1109/INFOCOM42981.2021.9488783}}
+  ```
+
+</details>
+
 Setting the environment
 =======================
 
