@@ -4,8 +4,9 @@ Verónica Toro-Betancur, Gopika Premsankar, Mariusz Slabicki and Mario Di France
 
 <details>
 
-  <summary>Click here to get BibTeX</summary>
-  ```BibTeX
+  <summary>Click here to get BibTeX entry</summary>
+
+  ```
     @INPROCEEDINGS{9488783,
     author={Toro-Betancur, Verónica and Premsankar, Gopika and Slabicki, Mariusz and Di Francesco, Mario},
     booktitle={IEEE INFOCOM 2021 - IEEE Conference on Computer Communications}, 
