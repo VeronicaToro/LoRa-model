@@ -70,7 +70,7 @@ You can run the model in both, uniform scenarios or user-specified networks, as 
 Uniform scenarios
 -----------------
 
-In this setting, the nodes are uniformly distributed around the gateways. You need to specify the number of gateways and nodes, the radius of deployment for each gateway and their location. These parameters are set in the file *network_config_files/network_config.ini*. For instance, for a network with 2 gateways located at coordinates (500 m, 500 m) and (1000 m, 500 m), 50 nodes deployed around each gateway in a radius of 500 m for both gateways, the file should look as follows:
+In uniform scenarios, nodes are uniformly distributed around gateways. Users can specify the number of nodes, the number of gateways, locations of gateway(s) and distance (*radius*) within which nodes are deployed. Specify the parameters in the file *network_config_files/network_config.ini*. For instance, for a network with 2 gateways located at coordinates (500 m, 500 m) and (1000 m, 500 m), 50 nodes deployed around each gateway within a radius of 500 m from both gateways, a sample is provided below. Note that the parameters *sizeX* and *sizeY* define the whole deployment area, such that all nodes are contained in a rectangle of sizes *sizeX*  and *sizeY*. Moreover, under [network], the total *numNodes* must be equal to the sum of *numNodes* deployed around each gateway.
 
 ```
 [network]
@@ -92,8 +92,6 @@ yLocation = 500
 radius = 500
 ```
 
-Note that the parameters *sizeX* and *sizeY* define the whole deployed area, such that all nodes are contained in a rectangle of sizes *sizeX*  and *sizeY*. Moreover, under [network], *numNodes* must be equal to the sum of *numNodes* for each gateway.
-
 To run the algorithm with the network specifications in the file called *network_config.ini*, inside the folder *network_config_files/*:
 ```
 python main.py -s minimum -t maximum -d ../network_config_files/network_config.ini
@@ -103,7 +101,7 @@ python main.py -s minimum -t maximum -d ../network_config_files/network_config.i
 User-specified networks
 -----------------------
 
-For a custom network, you must specify the location of all the nodes in the same format used in the example file in the *network_ini_files/* folder. Moreover, if you would like to specify the SF and TP of all nodes, you can do so in the same format of the example file. Additionally, you must enable the *-sno* flag when running the algorithm, as follows:
+For a custom network, you must specify the location of all the nodes in the same format used in the example file in the *network_ini_files/* folder. Moreover, if you would like to specify the SF and TP of all nodes, you can do so in the same format as in the example file provided in this repository. Additionally, you must enable the *-sno* flag when running the code. This flag indicates whether the SFs and TPs are in the network pickle file.
 
 ```
 python main.py -s minimum -t maximum -d ../network_config_files/custom_network.ini -sno 1
