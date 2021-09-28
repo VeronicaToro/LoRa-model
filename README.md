@@ -119,3 +119,16 @@ After running the model, you will only get the *Overall delivery ratio per node*
 ```
 python main.py -s minimum -t maximum -d ../network_config_files/network_config.ini -df results.npy 
 ```
+
+Changing parameters
+===================
+
+You would probably like to run the model with different channel and traffic parameters. To set the channel settings, you should modify the definition of *self._pld0*, *self._d0*, *self._gamma* and *self._sigma* in *src/network.py*. This model uses a [lognormal path loss model](https://en.wikipedia.org/wiki/Log-distance_path_loss_model), where
+
+* *self._pld0* is the mean pathloss at distance *self._d0*,
+* *self._gamma* is the pathloss exponent and
+* *self._sigma* is the standard deviation of a Gaussian variable with zero mean that models the channel variations.
+
+For a different average sending rate, i.e., the average rate at which the LoRa devices send packets, you should set the variable *arrival_rate* in *src/main.py*.
+
+The duty-cycle restriction can also be modified through the variable *self._dutyCycle* in *src/network.py*. A duty-cycle of 0.01 means that the devices can only be active for 1% of the time.
