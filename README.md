@@ -5,15 +5,17 @@ Verónica Toro-Betancur, Gopika Premsankar, Mariusz Slabicki and Mario Di France
 Setting the environment
 =======================
 
+We recommend using a Python virtual environment to run the code. Please follow the instructions using the package manager of your choice: Conda or pip. 
+
 Conda
 -----
 
-You can easily set the environment using [Conda](https://docs.conda.io/en/latest/). Simply run
+To set the environment using [Conda](https://docs.conda.io/en/latest/), simply run the following to create a Conda environment called *lora-env*.
+
 ```
 conda config --append channels conda-forge
 conda create --name lora-env --file requirements.txt
 ```
-to create a Conda environment called *lora-env*.
 
 pip
 ---
@@ -94,11 +96,10 @@ yLocation = 500
 radius = 500
 ```
 
-To run the algorithm with the network specifications in the file called *network_config.ini*, inside the folder *network_config_files/*:
+To run the model with the network specifications in the file called *network_config.ini*, inside the folder *network_config_files/*:
 ```
 python main.py -s minimum -t maximum -d ../network_config_files/network_config.ini
 ```
-
 
 User-specified networks
 -----------------------
@@ -109,13 +110,12 @@ For a custom network, you must specify the location of all the nodes in the same
 python main.py -s minimum -t maximum -d ../network_config_files/custom_network.ini -sno 1
 ```
 
-Even though the *-s* and *-t* flags have no effect in this case, they must always be entered.
-
+Even though the *-s* and *-t* flags have no effect in this case, they must always be entered. Note that the format of the INI files are based on the config files used in the [FloRa simulator](https://github.com/mariuszslabicki/flora).
 
 Saving your results
 ===================
 
-After running the algorithm, you will only get the *Overall delivery ratio per node* printed in the terminal. However, if you would like to store the delivery ratio per node in a [numpy](https://numpy.org/) file, then you must specify the path and file name you want to create with the results, using the option *-df*. Remember to include the file extension *.npy*. If such a file already exists, the results will be overwritten.
+After running the model, you will only get the *Overall delivery ratio per node* printed in the terminal. However, if you would like to store the delivery ratio per node in a [numpy](https://numpy.org/) file, then you must specify the path and file name you want to create with the results, using the option *-df*. Remember to include the file extension *.npy*. If such a file already exists, the results will be overwritten.
 ```
 python main.py -s minimum -t maximum -d ../network_config_files/network_config.ini -df results.npy 
 ```
