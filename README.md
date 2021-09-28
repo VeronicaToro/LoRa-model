@@ -1,4 +1,6 @@
-This repository is the implementation of the model presented in ["Modeling Communication Reliability in LoRa Networks with Device-level Accuracy"](https://ieeexplore.ieee.org/document/9488783).
+This repository is the implementation of the model described in ["Modeling Communication Reliability in LoRa Networks with Device-level Accuracy"](https://ieeexplore.ieee.org/document/9488783) presented at INFOCOM 2021. The model allows to quickly obtain an estimate of the delivery ratio of each node in a user-specified LoRa network. The model calculates the delivery ratio per node by taking into account several key factors: quasi-orthogonal spreading factors, capture effect, duty cycling and channel variation due to fading. For more details, please read the [paper](https://acris.aalto.fi/ws/portalfiles/portal/55456161/lora_model.pdf). If you use the model, please cite:
+
+Verónica Toro-Betancur, Gopika Premsankar, Mariusz Slabicki and Mario Di Francesco, "Modeling Communication Reliability in LoRa Networks with Device-level Accuracy," IEEE INFOCOM 2021 - IEEE Conference on Computer Communications, 2021, pp. 1-10, doi: 10.1109/INFOCOM42981.2021.9488783.
 
 Setting the environment
 =======================
